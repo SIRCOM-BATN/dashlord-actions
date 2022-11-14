@@ -85,6 +85,26 @@ export const DeclarationA11y: React.FC<DeclarationA11yProps> = ({ data }) => {
         ></Alert>
       ),
     },
+    percentage: {
+      true: (
+        <Alert
+          type="success"
+          title=""
+          description={
+            <>Le pourcentage de conformité récupéré dans la déclaration est de {data.percentage}.</>
+          }
+        ></Alert>
+      ),
+      false: (
+        <Alert
+          type="error"
+          title=""
+          description={
+            <>Le pourcentage de conformité n'a pas pu être récupéré dans la déclaration.</>
+          }
+        ></Alert>
+      ),
+    },
   };
   return (
     (data && (
@@ -94,6 +114,7 @@ export const DeclarationA11y: React.FC<DeclarationA11yProps> = ({ data }) => {
       >
         {alerts.mention[data.mention || "null"]}
         {alerts.declaration["" + !!data.declarationUrl]}
+        {alerts.percentage["" + !!data.percentage]}
       </Panel>
     )) ||
     null

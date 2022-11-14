@@ -350,6 +350,7 @@ type PageReport = {
 type DeclarationA11yReport = {
   mention: string | null;
   declarationUrl?: string;
+  percentage?: string;
 };
 
 type DeclarationRgpdItem = {
