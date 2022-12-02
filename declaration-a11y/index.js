@@ -96,12 +96,25 @@ const analyseUrlForPercentage = (result) => {
   }
   let htmlString = htmlOutput.toString().toUpperCase();
   // delete html tags, replaces &NBSP
-  htmlString = htmlString.replace(/(<([^>]+)>)/gi,'').replace(/\&NBSP\;/g,' ');
+  htmlString = htmlString.replace(/(<([^>]+)>)/gi,'').replace(/\&NBSP\;/gi,' ');
   // find percentages on the string (page)
-  let matchResult = htmlString.match(/[à|que] (\d+([.,]\d+)? ?%)/gmi);
+  let matchResult = htmlString.match(/(\w+) (\d+([.,]\d+)? ?%)/gmi);
+
   if(null != matchResult && matchResult.length > 0) {
+    // default is first element founded
+    var elementToParse = matchResult[0];
+    if(matchResult.length > 1) {
+      // find most pertinent percentage
+      matchResult.forEach(element => {
+        let word = element.match(/([a-z]+)/gmi);
+        // if prefix word is 'rendre', it is the best matching
+        if(word[0] == 'RENDRE') {
+          elementToParse = element;
+        }
+      });      
+    }
     // set percentage and remove prefix words and spaces
-    result.percentage = matchResult[0].replace(/[à|que] /gi,'').replace(/ /g,'');
+    result.percentage = elementToParse.replace(/à|que|rendre /gi,'').replace(/ /g,'');
   }
 
   return result;
