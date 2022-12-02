@@ -48,3 +48,10 @@ exports[`opentermsarchive.org.html 1`] = `
   "mention": "Accessibilité : non conforme",
 }
 `;
+
+exports[`tourisme.html 1`] = `
+{
+  "declarationUrl": "https://example.com/fr/declaration-d-accessibilite",
+  "mention": "Accessibilité : partiellement conforme",
+}
+`;
