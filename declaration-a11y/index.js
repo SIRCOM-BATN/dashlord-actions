@@ -98,7 +98,7 @@ const analyseUrlForPercentage = (result) => {
   // delete html tags, replaces &NBSP
   htmlString = htmlString.replace(/(<([^>]+)>)/gi,'').replace(/\&NBSP\;/gi,' ');
   // find percentages on the string (page)
-  let matchResult = htmlString.match(/(\w+) (\d+([.,]\d+)? ?%)/gmi);
+  let matchResult = htmlString.match(/([a-zèéà]+) (\d+[.,]?\d+? ?%)/gmi);
 
   if(null != matchResult && matchResult.length > 0) {
     // default is first element founded
@@ -114,7 +114,7 @@ const analyseUrlForPercentage = (result) => {
       });      
     }
     // set percentage and remove prefix words and spaces
-    result.percentage = elementToParse.replace(/à|que|rendre /gi,'').replace(/ /g,'');
+    result.percentage = elementToParse.replace(/à|que|rendre|élève /gi,'').replace(/ /g,'');
   }
 
   return result;
