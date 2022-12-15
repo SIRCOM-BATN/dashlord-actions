@@ -31,6 +31,8 @@ const tools = {
   "declaration-rgpd": (report) => require("./declaration-rgpd")(report),
   /** @param {EcoIndexReport} report */
   ecoindex: (report) => require("./ecoindex")(report),
+  /** @param {UpTrendsReport} report */
+  uptrends: (report) => require("./uptrends")(report),
 };
 
 /**

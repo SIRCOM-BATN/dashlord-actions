@@ -22,6 +22,7 @@ tools:
   declaration-a11y: true
   declaration-rgpd: true
   betagouv: true
+  uptrends: true
 urls:
   - url: https://www.free.fr
     title: Free
@@ -40,4 +41,5 @@ urls:
       screenshot: false
       updownio: false
       stats: false
+      uptrends: false
   - url: https://voila.fr
