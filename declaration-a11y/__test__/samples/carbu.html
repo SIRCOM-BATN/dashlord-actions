@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Site du prix des carburants du Ministère de l'Économie, des Finances et de la Souveraineté industrielle : SP95, Gazole, E85, GPL, E10, SP98">
+    <meta name="keywords" content="Site du Ministère de l'Économie, des Finances et de la Souveraineté industrielle, prix des carburants, SP95, Gazole, E85, GPL, E10, SP98 comparer les prix des carburants, Roulez Eco">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>
+                                    Prix des carburants en France, site gouvernemental
+                        </title>
+
+            <script type="text/javascript"> var QWA = {};
+            QWA.startTime = new Date().getTime(); </script>
+            <link rel="stylesheet" href="/css/multiple-select.min.css">
+                    <link rel="stylesheet" href="/css/_style--main.css" type="text/css" media="all">
+                            
+    <link rel="stylesheet" href="/css/jquery-ui-1.10.4.custom.min.css">
+    <style>
+        #recherche_choix_services {
+            width : 343px;
+        }
+    </style>
+
+                <script>
+            // variables globales utilisees dans les scripts pour les requetes ajax
+            var BASE_URL = '';
+            var BASE_ASSET_URL = '/images/';
+
+            // Carto>
+            var WMTS_URL = 'https://map.roulez-eco.fr/tiles/wmts/';
+            var BASE_CARTO_ASSET_URL = '/carto/images/';
+
+            // Credit map
+            var MAP_ATTRIBUTION = 'Data © <a href="http://www.openstreetmap.org/copyright/fr" target="_blank">OpenStreetMap</a> contributors';
+
+            // Nom des styles
+            var LABEL_STYLE_1 = 'Style 1';
+            var LABEL_STYLE_2 = 'Style 2';
+            var LABEL_STYLE_3 = 'Style 3';
+
+            // Gestion du menu
+            var IS_MENU_AFF = true;
+            var RESPONSIVE_WIDTH = 768;
+
+            // Debug
+                        var DEBUG_CARTO = false;
+            
+                        var IS_MOBILE = false;
+            
+        </script>
+        <script src="/js/scriptaculous/lib/prototype.js" type="text/javascript"></script>
+        <script src="/js/scriptaculous/src/effects.js" type="text/javascript"></script>
+
+        <script src="/js/general_201112.js" type="text/javascript"></script>
+                <script type="text/javascript" src="/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script>
+            jQuery.noConflict();
+        </script>
+                        <script src="https://tag.aticdn.net/495337/smarttag.js"></script>
+            
+    <script type="text/javascript" src="/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="/js/autocompletion.js" type="text/javascript"></script>
+    <script src="/js/multiple-select.min.js"></script>
+    <!-- Favicons des devices -->
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+        <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<link rel="stylesheet" type="text/css" href="/carto/OpenLayers-2.13.1/theme/default/style.css"></head>
+<body style="">
+    <script type="text/javascript">
+        var tag = new ATInternet.Tracker.Tag();
+        // prix carbu exempt
+        tag.privacy.setVisitorMode('cnil', 'exempt');
+    </script>
+<div id="backgrounds_header">
+    </div>
+<div id="global">
+    <div class="skip-links">
+        <ul>
+            <li><a class="evitement" href="#menu">Aller au menu principal</a></li>
+            <li><a class="evitement" href="#main">Aller au contenu principal</a></li>
+        </ul>
+    </div>
+    <nav role="navigation">
+        <ul id="menu">
+    <li id="menu_condensed">
+        <button class="menubutton" aria-expanded="false" onclick="OnClickedReduceMenu(this);"><span>Menu</span><img alt="" class="svg" src="/images/interface/svg/menu_icon_bar.svg" onerror="this.onerror=null; this.src='/images/interface/menu_icon_bar.gif'"></button>
+    </li>
+
+        
+                        <li class=" menu_login">
+                <a href="/internaute/">Se connecter</a>
+            </li>
+                <li class=" menu_element">
+        <a href="/internaute/">Vos favoris</a>
+    </li>
+    <li class=" opendata menu_element">
+        <a href="/rubrique/opendata/">Données publiques</a>
+    </li>
+    <li class=" menu_element">
+        <a href="/rubrique/faq/">Foire aux questions</a>
+    </li>
+
+    <li class=" last menu_element">
+        <a href="/contact/">Contact</a>
+    </li>
+
+    
+    
+</ul>
+    </nav>
+
+    <header role="banner">
+        <div id="header">
+            <div id="header_content">
+    <div id="logo">
+        <a href="/">
+            <img src="/images/interface/logo.svg" alt="Le prix des carburants - retour accueil">
+        </a>
+    </div>
+    <div>
+        <a href="/">
+            <img id="logopc" src="/images/interface/LogoPrixCarburant.png" alt="Le prix des carburants - retour accueil">
+        </a>
+    </div>
+    <div id="header_titre">
+        <a href="/">
+                        <h1>
+                <span class="header_title">
+    	    		        <span>Le
+    	    		        <span class="application-nom-1">prix</span>
+                            </span>
+                <span>
+                    <span class="header_span_table">
+    	    		        <span class="header_span_tablecell">des
+                                </span>
+    	    		        <span class="application-nom-2">carburants</span>
+                            </span>
+        		        </span>
+                </span>
+                <span class="header_annonce">
+    	    		        <span>À compter du 1er septembre 2022, vous bénéficiez d’une remise de
+                            <span class="application-nom-1">30 ct d’€ par litre</span>
+                                prise en charge par l’État
+                            </span>
+                </span>
+            </h1>
+        </a>
+    </div>
+    </div>
+        </div>
+    </header>
+
+    <main role="main" tabindex="-1">
+        <div id="main">
+            
+
+    <!-- Zone de contenu -->
+        <div id="actualites">
+        <div id="newsticker">
+            <p>
+                <a href="/actualites/">
+                    <span class="actualites_span">Actualité : À compter du 1er septembre 2022, vous bénéficiez d'une remise de 30ct d'€ par litre prise en charge par l'État - Aide exceptionnelle à l'acquisition de carburant.</span>
+                </a>
+            </p>
+        </div>
+    </div>
+
+
+        
+    <div id="main_block">
+        <div id="recherche_title">
+
+                            <h2>Rechercher des points de vente de carburants</h2>
+                    </div>
+
+        <div id="recherche">
+            <form action="/" method="post" id="search_form">
+
+                                
+                
+                <div id="choix_carbu">
+                    <fieldset>
+                        <legend>Choix des carburants</legend>
+                        <div id="erreur_carburant"> </div>
+                        <ul class="boite_carbu">
+                                                            <li class="stylised-checkbox">
+                                    <input type="checkbox" id="rechercher_choix_carbu_0" name="rechercher[choix_carbu][]" value="1">
+                                    <label for="rechercher_choix_carbu_0">
+                                        <img src="/images/carburants/1.svg" class="icon-carburant" alt="B7">
+                                        Gazole</label>
+                                </li>
+                                                            <li class="stylised-checkbox">
+                                    <input type="checkbox" id="rechercher_choix_carbu_1" name="rechercher[choix_carbu][]" value="6">
+                                    <label for="rechercher_choix_carbu_1">
+                                        <img src="/images/carburants/6.svg" class="icon-carburant" alt="E5">
+                                        SP98</label>
+                                </li>
+                                                            <li class="stylised-checkbox">
+                                    <input type="checkbox" id="rechercher_choix_carbu_2" name="rechercher[choix_carbu][]" value="5">
+                                    <label for="rechercher_choix_carbu_2">
+                                        <img src="/images/carburants/5.svg" class="icon-carburant" alt="E10">
+                                        SP95-E10</label>
+                                </li>
+                                                            <li class="stylised-checkbox">
+                                    <input type="checkbox" id="rechercher_choix_carbu_3" name="rechercher[choix_carbu][]" value="2">
+                                    <label for="rechercher_choix_carbu_3">
+                                        <img src="/images/carburants/2.svg" class="icon-carburant" alt="E5">
+                                        SP95</label>
+                                </li>
+                                                            <li class="stylised-checkbox">
+                                    <input type="checkbox" id="rechercher_choix_carbu_4" name="rechercher[choix_carbu][]" value="4">
+                                    <label for="rechercher_choix_carbu_4">
+                                        <img src="/images/carburants/4.svg" class="icon-carburant" alt="LPG">
+                                        GPLc</label>
+                                </li>
+                                                            <li class="stylised-checkbox">
+                                    <input type="checkbox" id="rechercher_choix_carbu_5" name="rechercher[choix_carbu][]" value="3">
+                                    <label for="rechercher_choix_carbu_5">
+                                        <img src="/images/carburants/3.svg" class="icon-carburant" alt="E85">
+                                        E85</label>
+                                </li>
+                                                    </ul>
+                    </fieldset>
+                </div>
+
+                <div id="localisation">
+                    <fieldset>
+                        <legend class="legend_localisation">Localisation *</legend>
+                        <div id="departement">
+                            <label class="labelh3" for="rechercher_departement">Par département
+                                <div id="erreur_departement"></div>
+                            </label>
+
+                            
+                                                        <input type="hidden" id="rechercher_geolocalisation_long" name="rechercher[geolocalisation_long]" class="geolocalisation-long">
+                            <input type="hidden" id="rechercher_geolocalisation_lat" name="rechercher[geolocalisation_lat]" class="geolocalisation-lat">
+                            <select id="rechercher_departement" name="rechercher[departement]" aria-describedby="erreur_departement"><option value="">Sélectionner un département</option><option value="01">01 - Ain</option><option value="02">02 - Aisne</option><option value="03">03 - Allier</option><option value="04">04 - Alpes-de-Haute-Provence</option><option value="05">05 - Hautes-Alpes</option><option value="06">06 - Alpes-Maritimes</option><option value="07">07 - Ardèche</option><option value="08">08 - Ardennes</option><option value="09">09 - Ariège</option><option value="10">10 - Aube</option><option value="11">11 - Aude</option><option value="12">12 - Aveyron</option><option value="13">13 - Bouches-du-Rhône</option><option value="14">14 - Calvados</option><option value="15">15 - Cantal</option><option value="16">16 - Charente</option><option value="17">17 - Charente-Maritime</option><option value="18">18 - Cher</option><option value="19">19 - Corrèze</option><option value="2A">2A - Corse-du-Sud</option><option value="2B">2B - Haute-Corse</option><option value="21">21 - Côte d'Or</option><option value="22">22 - Côtes d'Armor</option><option value="23">23 - Creuse</option><option value="24">24 - Dordogne</option><option value="25">25 - Doubs</option><option value="26">26 - Drôme</option><option value="27">27 - Eure</option><option value="28">28 - Eure-et-Loir</option><option value="29">29 - Finistère</option><option value="30">30 - Gard</option><option value="31">31 - Haute-Garonne</option><option value="32">32 - Gers</option><option value="33">33 - Gironde</option><option value="34">34 - Hérault</option><option value="35">35 - Ille-et-Vilaine</option><option value="36">36 - Indre</option><option value="37">37 - Indre-et-Loire</option><option value="38">38 - Isère</option><option value="39">39 - Jura</option><option value="40">40 - Landes</option><option value="41">41 - Loir-et-Cher</option><option value="42">42 - Loire</option><option value="43">43 - Haute-Loire</option><option value="44">44 - Loire-Atlantique</option><option value="45">45 - Loiret</option><option value="46">46 - Lot</option><option value="47">47 - Lot-et-Garonne</option><option value="48">48 - Lozère</option><option value="49">49 - Maine-et-Loire</option><option value="50">50 - Manche</option><option value="51">51 - Marne</option><option value="52">52 - Haute-Marne</option><option value="53">53 - Mayenne</option><option value="54">54 - Meurthe-et-Moselle</option><option value="55">55 - Meuse</option><option value="56">56 - Morbihan</option><option value="57">57 - Moselle</option><option value="58">58 - Nièvre</option><option value="59">59 - Nord</option><option value="60">60 - Oise</option><option value="61">61 - Orne</option><option value="62">62 - Pas-de-Calais</option><option value="63">63 - Puy-de-Dôme</option><option value="64">64 - Pyrénées-Atlantiques</option><option value="65">65 - Hautes-Pyrénées</option><option value="66">66 - Pyrénées-Orientales</option><option value="67">67 - Bas-Rhin</option><option value="68">68 - Haut-Rhin</option><option value="69">69 - Rhône</option><option value="70">70 - Haute-Saône</option><option value="71">71 - Saône-et-Loire</option><option value="72">72 - Sarthe</option><option value="73">73 - Savoie</option><option value="74">74 - Haute-Savoie</option><option value="75">75 - Paris</option><option value="76">76 - Seine-Maritime</option><option value="77">77 - Seine-et-Marne</option><option value="78">78 - Yvelines</option><option value="79">79 - Deux-Sèvres</option><option value="80">80 - Somme</option><option value="81">81 - Tarn</option><option value="82">82 - Tarn-et-Garonne</option><option value="83">83 - Var</option><option value="84">84 - Vaucluse</option><option value="85">85 - Vendée</option><option value="86">86 - Vienne</option><option value="87">87 - Haute-Vienne</option><option value="88">88 - Vosges</option><option value="89">89 - Yonne</option><option value="90">90 - Territoire-de-Belfort</option><option value="91">91 - Essonne</option><option value="92">92 - Hauts-de-Seine</option><option value="93">93 - Seine-Saint-Denis</option><option value="94">94 - Val-de-Marne</option><option value="95">95 - Val-d'Oise</option></select>
+                        </div>
+                        <label class="labelh3" for="rechercher_localisation">
+                            Par commune ou un code postal</label>
+                        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" id="rechercher_localisation" name="rechercher[localisation]" placeholder="Par exemple 'Toulouse' ou '33200'" autocomplete="off" aria-autocomplete="list" class="ui-autocomplete-input">
+                        <span class="autompleteLoading">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+                                            </fieldset>
+                </div>
+
+                <fieldset>
+                    <label class="labelh3" for="rechercher_type_enseigne">Choisissez un type d'enseigne
+                        
+                    </label>
+                    <select id="rechercher_type_enseigne" name="rechercher[type_enseigne]"><option value="">Toutes les enseignes</option><option value="M">Major</option><option value="G">Grande et moyenne surface</option><option value="I">Indépendant</option></select>
+
+
+                    <dl id="choix_services" class="dropdown">
+                        <label class="labelh3" for="recherche_choix_services">Choisissez un ou plusieurs services</label>
+                        
+                        <input id="recherche_choix_services" class="servicesAffinage" type="button" onclick="onClickedChoixServices();" value="Sélectionner les services">
+
+                        <dd style="display: none;">
+                            <div class="mutliSelect">
+                                <ul>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_0" name="rechercher[choix_services][]" value="21">
+                                        <label for="rechercher_choix_services_0">Aire de camping-cars</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_1" name="rechercher[choix_services][]" value="9">
+                                        <label for="rechercher_choix_services_1">Bar</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_2" name="rechercher[choix_services][]" value="28">
+                                        <label for="rechercher_choix_services_2">Bornes électriques</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_3" name="rechercher[choix_services][]" value="12">
+                                        <label for="rechercher_choix_services_3">Boutique alimentaire</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_4" name="rechercher[choix_services][]" value="15">
+                                        <label for="rechercher_choix_services_4">Boutique non alimentaire</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_5" name="rechercher[choix_services][]" value="4">
+                                        <label for="rechercher_choix_services_5">Carburant additivé</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_6" name="rechercher[choix_services][]" value="23">
+                                        <label for="rechercher_choix_services_6">DAB (Distributeur automatique de billets)</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_7" name="rechercher[choix_services][]" value="11">
+                                        <label for="rechercher_choix_services_7">Douches</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_8" name="rechercher[choix_services][]" value="14">
+                                        <label for="rechercher_choix_services_8">Espace bébé</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_9" name="rechercher[choix_services][]" value="7">
+                                        <label for="rechercher_choix_services_9">GNV</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_10" name="rechercher[choix_services][]" value="24">
+                                        <label for="rechercher_choix_services_10">Lavage automatique</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_11" name="rechercher[choix_services][]" value="25">
+                                        <label for="rechercher_choix_services_11">Lavage manuel</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_12" name="rechercher[choix_services][]" value="17">
+                                        <label for="rechercher_choix_services_12">Laverie</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_13" name="rechercher[choix_services][]" value="19">
+                                        <label for="rechercher_choix_services_13">Location de véhicule</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_14" name="rechercher[choix_services][]" value="22">
+                                        <label for="rechercher_choix_services_14">Piste poids lourds</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_15" name="rechercher[choix_services][]" value="20">
+                                        <label for="rechercher_choix_services_15">Relais colis</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_16" name="rechercher[choix_services][]" value="6">
+                                        <label for="rechercher_choix_services_16">Restauration sur place</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_17" name="rechercher[choix_services][]" value="3">
+                                        <label for="rechercher_choix_services_17">Restauration à emporter</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_18" name="rechercher[choix_services][]" value="16">
+                                        <label for="rechercher_choix_services_18">Services réparation / entretien</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_19" name="rechercher[choix_services][]" value="13">
+                                        <label for="rechercher_choix_services_19">Station de gonflage</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_20" name="rechercher[choix_services][]" value="8">
+                                        <label for="rechercher_choix_services_20">Toilettes publiques</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_21" name="rechercher[choix_services][]" value="29">
+                                        <label for="rechercher_choix_services_21">Vente d'additifs carburants</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_22" name="rechercher[choix_services][]" value="26">
+                                        <label for="rechercher_choix_services_22">Vente de fioul domestique</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_23" name="rechercher[choix_services][]" value="18">
+                                        <label for="rechercher_choix_services_23">Vente de gaz domestique (Butane, Propane)</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_24" name="rechercher[choix_services][]" value="27">
+                                        <label for="rechercher_choix_services_24">Vente de pétrole lampant</label>
+                                        </li>
+                                                                            <li><input type="checkbox" id="rechercher_choix_services_25" name="rechercher[choix_services][]" value="30">
+                                        <label for="rechercher_choix_services_25">Wifi</label>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    
+
+                    <input type="hidden" id="rechercher__token" name="rechercher[_token]" value="9638da0ffa.Ca26dFBHJ4C79RUV_Hri2rzQtYnRv9Y7_sWp4Sczitg.evL9EDUXcbfQo1ltyRfXi_uP5tinh7VViKjBqn9E1eBBzoMwASFj3_-GTA">
+
+                    <input type="submit" value="Voir la liste des stations" class="submit_recherche">
+                </fieldset>
+            </form>
+        </div>
+
+                    <div id="carte_france" aria-hidden="true">
+                <a class="evitement" href="#contenu">Aller au contenu</a>
+                <div id="carte_france_zone_carte">
+                    <div class="indisponible" style="display: none;">
+                        <img src="/images/interface/plan_vide.gif" alt="Points de vente en cours de géolocalisation">
+                    </div>
+                    <div id="carto-message" class="carto-message-display carto-message-hidden" style="width: 406px; height: 406.25px; padding-top: 243.75px;">Vous pouvez zoomer sur la carte à l'aide de ⇧ (shift)  + Molette de défilement</div>
+                    <div id="map" class="olMap" style="display: block;"><div id="OpenLayers_Map_2_OpenLayers_ViewPort" class="olMapViewport olControlDragPanActive olControlZoomBoxActive olControlPinchZoomActive olControlNavigationActive olControlMousePositionActive olControlSelectFeatureActive olControlDragFeatureActive" style="position: relative; overflow: hidden; width: 100%; height: 100%;"><div id="OpenLayers_Map_2_OpenLayers_Container" style="position: absolute; z-index: 749; left: -1px; top: 18px;"><div id="OpenLayers_Layer_TMS_18" dir="ltr" class="olLayerDiv olLayerGrid" style="position: absolute; width: 100%; height: 100%; z-index: 100;"></div><div id="OpenLayers_Layer_TMS_20" dir="ltr" class="olLayerDiv olLayerGrid" style="position: absolute; width: 100%; height: 100%; z-index: 105; display: none;"></div><div id="OpenLayers_Layer_TMS_22" dir="ltr" class="olLayerDiv olLayerGrid" style="position: absolute; width: 100%; height: 100%; z-index: 110; display: none;"></div><div id="OpenLayers_Layer_Vector_50" dir="ltr" class="olLayerDiv" style="position: absolute; width: 100%; height: 100%; z-index: 340; left: 0px; top: 0px;"><svg id="OpenLayers_Layer_Vector_50_svgRoot" width="406" height="650" viewBox="0 0 406 650" style="display: block;"></svg></div><div id="OpenLayers_Layer_Vector_55" dir="ltr" class="olLayerDiv" style="position: absolute; width: 100%; height: 100%; z-index: 345; left: 0px; top: 0px;"><svg id="OpenLayers_Layer_Vector_55_svgRoot" width="406" height="650" viewBox="0 0 406 650" style="display: block;"><g id="OpenLayers_Layer_Vector_55_root" transform="" style="visibility: visible;"><g id="OpenLayers_Layer_Vector_55_vroot"></g><g id="OpenLayers_Layer_Vector_55_troot"></g></g></svg></div><div id="OpenLayers_Layer_Vector_69" dir="ltr" class="olLayerDiv" style="position: absolute; width: 100%; height: 100%; z-index: 725; left: 0px; top: 0px;"><svg id="OpenLayers_Layer_Vector_69_svgRoot" width="406" height="650" viewBox="0 0 406 650" style="display: block;"></svg></div><div id="OpenLayers_Layer_Vector_74" dir="ltr" class="olLayerDiv" style="position: absolute; width: 100%; height: 100%; z-index: 355; left: 0px; top: 0px;"><svg id="OpenLayers_Layer_Vector_74_svgRoot" width="406" height="650" viewBox="0 0 406 650" style="display: block;"><g id="OpenLayers_Layer_Vector_74_root" transform="" style="visibility: visible;"><g id="OpenLayers_Layer_Vector_74_vroot"></g><g id="OpenLayers_Layer_Vector_74_troot"></g></g></svg></div><div id="OpenLayers_Layer_Vector_RootContainer_84" dir="ltr" class="olLayerDiv" style="position: absolute; width: 100%; height: 100%; z-index: 725; left: 0px; top: 0px;"><svg id="OpenLayers_Layer_Vector_RootContainer_84_svgRoot" width="406" height="650" viewBox="0 0 406 650" style="display: block;"><g id="OpenLayers_Layer_Vector_RootContainer_84_root" transform="" style="visibility: visible;"><g id="OpenLayers_Layer_Vector_RootContainer_84_vroot"></g><g id="OpenLayers_Layer_Vector_RootContainer_84_troot"></g></g><g id="OpenLayers_Layer_Vector_50_root" transform="" style="visibility: visible;"><g id="OpenLayers_Layer_Vector_50_vroot"></g><g id="OpenLayers_Layer_Vector_50_troot"></g></g><g id="OpenLayers_Layer_Vector_69_root" transform="" style="visibility: visible;"><g id="OpenLayers_Layer_Vector_69_vroot"></g><g id="OpenLayers_Layer_Vector_69_troot"></g></g></svg></div><div id="OpenLayers_Layer_Vector_17670" dir="ltr" class="olLayerDiv" style="position: absolute; width: 100%; height: 100%; z-index: 365; left: 1px; top: -18px;"><svg id="OpenLayers_Layer_Vector_17670_svgRoot" width="406" height="650" viewBox="0 0 406 650" style="display: block;"><g id="OpenLayers_Layer_Vector_17670_root" transform="" style="visibility: visible;"><g id="OpenLayers_Layer_Vector_17670_vroot"><image id="OpenLayers_Geometry_Point_17675" cx="202.75662222221905" cy="272.94768543572525" r="1" preserveAspectRatio="none" x="175" y="245" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17677" cx="204.01813333333018" cy="268.50738024393576" r="1" preserveAspectRatio="none" x="177" y="241" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17679" cx="209.8563555555523" cy="267.7574509933215" r="1" preserveAspectRatio="none" x="182" y="240" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17681" cx="205.45742222221907" cy="263.6979471039605" r="1" preserveAspectRatio="none" x="178" y="236" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17683" cx="212.94257777777457" cy="263.7151502608062" r="1" preserveAspectRatio="none" x="185" y="236" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17685" cx="200.66946844444132" cy="268.9117927722052" r="1" preserveAspectRatio="none" x="173" y="241" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17687" cx="210.53759999999681" cy="273.0110580952953" r="1" preserveAspectRatio="none" x="183" y="246" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17689" cx="205.06631111110795" cy="272.3319772843825" r="1" preserveAspectRatio="none" x="178" y="245" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17691" cx="204.53513955555232" cy="262.2129072448172" r="1" preserveAspectRatio="none" x="177" y="235" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17693" cx="208.49890518430334" cy="273.2938935148101" r="1" preserveAspectRatio="none" x="181" y="246" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17695" cx="208.87856355555232" cy="271.4538198793604" r="1" preserveAspectRatio="none" x="181" y="244" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17697" cx="206.06471111110795" cy="259.541203979169" r="1" preserveAspectRatio="none" x="179" y="232" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17699" cx="197.2456313833212" cy="265.370694470394" r="1" preserveAspectRatio="none" x="170" y="238" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17701" cx="206.17848888888568" cy="267.64338682054654" r="1" preserveAspectRatio="none" x="179" y="240" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17703" cx="200.55709724444122" cy="266.2052969986639" r="1" preserveAspectRatio="none" x="173" y="239" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17705" cx="207.21671111110794" cy="262.1623555022085" r="1" preserveAspectRatio="none" x="180" y="235" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17707" cx="207.5480888888857" cy="266.05937035307534" r="1" preserveAspectRatio="none" x="180" y="239" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17709" cx="214.51271111110793" cy="275.988570513912" r="1" preserveAspectRatio="none" x="187" y="248" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17711" cx="204.83049357718977" cy="261.14035102682953" r="1" preserveAspectRatio="none" x="177" y="234" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17713" cx="209.6515555555523" cy="262.4738366850327" r="1" preserveAspectRatio="none" x="182" y="235" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17715" cx="205.59537777777456" cy="264.8616171662584" r="1" preserveAspectRatio="none" x="178" y="237" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image><image id="OpenLayers_Geometry_Point_17717" cx="202.26241422221904" cy="263.6824619332396" r="1" preserveAspectRatio="none" x="175" y="236" width="55" height="55" xlink:href="/carto/images//interface/carto/cluster_region.png" style="opacity: 1" fill="#000000" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></image></g><g id="OpenLayers_Layer_Vector_17670_troot"><text id="OpenLayers_Feature_Vector_17676_label" x="202.75662222221905" y="272.94768543572525" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17676_label_tspan_0" baseline-shift="-35%" x="202.75662222221905" dy="0em">577</tspan></text><text id="OpenLayers_Feature_Vector_17678_label" x="204.01813333333018" y="268.50738024393576" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17678_label_tspan_0" baseline-shift="-35%" x="204.01813333333018" dy="0em">167</tspan></text><text id="OpenLayers_Feature_Vector_17680_label" x="209.8563555555523" y="267.7574509933215" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17680_label_tspan_0" baseline-shift="-35%" x="209.8563555555523" dy="0em">217</tspan></text><text id="OpenLayers_Feature_Vector_17682_label" x="205.45742222221907" y="263.6979471039605" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17682_label_tspan_0" baseline-shift="-35%" x="205.45742222221907" dy="0em">705</tspan></text><text id="OpenLayers_Feature_Vector_17684_label" x="212.94257777777457" y="263.7151502608062" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17684_label_tspan_0" baseline-shift="-35%" x="212.94257777777457" dy="0em">229</tspan></text><text id="OpenLayers_Feature_Vector_17686_label" x="200.66946844444132" y="268.9117927722052" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17686_label_tspan_0" baseline-shift="-35%" x="200.66946844444132" dy="0em">299</tspan></text><text id="OpenLayers_Feature_Vector_17688_label" x="210.53759999999681" y="273.0110580952953" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17688_label_tspan_0" baseline-shift="-35%" x="210.53759999999681" dy="0em">735</tspan></text><text id="OpenLayers_Feature_Vector_17690_label" x="205.06631111110795" y="272.3319772843825" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17690_label_tspan_0" baseline-shift="-35%" x="205.06631111110795" dy="0em">552</tspan></text><text id="OpenLayers_Feature_Vector_17692_label" x="204.53513955555232" y="262.2129072448172" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17692_label_tspan_0" baseline-shift="-35%" x="204.53513955555232" dy="0em">247</tspan></text><text id="OpenLayers_Feature_Vector_17694_label" x="208.49890518430334" y="273.2938935148101" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17694_label_tspan_0" baseline-shift="-35%" x="208.49890518430334" dy="0em">437</tspan></text><text id="OpenLayers_Feature_Vector_17696_label" x="208.87856355555232" y="271.4538198793604" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17696_label_tspan_0" baseline-shift="-35%" x="208.87856355555232" dy="0em">875</tspan></text><text id="OpenLayers_Feature_Vector_17698_label" x="206.06471111110795" y="259.541203979169" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17698_label_tspan_0" baseline-shift="-35%" x="206.06471111110795" dy="0em">424</tspan></text><text id="OpenLayers_Feature_Vector_17700_label" x="197.2456313833212" y="265.370694470394" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17700_label_tspan_0" baseline-shift="-35%" x="197.2456313833212" dy="0em">533</tspan></text><text id="OpenLayers_Feature_Vector_17702_label" x="206.17848888888568" y="267.64338682054654" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17702_label_tspan_0" baseline-shift="-35%" x="206.17848888888568" dy="0em">247</tspan></text><text id="OpenLayers_Feature_Vector_17704_label" x="200.55709724444122" y="266.2052969986639" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17704_label_tspan_0" baseline-shift="-35%" x="200.55709724444122" dy="0em">512</tspan></text><text id="OpenLayers_Feature_Vector_17706_label" x="207.21671111110794" y="262.1623555022085" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17706_label_tspan_0" baseline-shift="-35%" x="207.21671111110794" dy="0em">224</tspan></text><text id="OpenLayers_Feature_Vector_17708_label" x="207.5480888888857" y="266.05937035307534" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17708_label_tspan_0" baseline-shift="-35%" x="207.5480888888857" dy="0em">363</tspan></text><text id="OpenLayers_Feature_Vector_17710_label" x="214.51271111110793" y="275.988570513912" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17710_label_tspan_0" baseline-shift="-35%" x="214.51271111110793" dy="0em">129</tspan></text><text id="OpenLayers_Feature_Vector_17712_label" x="204.83049357718977" y="261.14035102682953" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17712_label_tspan_0" baseline-shift="-35%" x="204.83049357718977" dy="0em">281</tspan></text><text id="OpenLayers_Feature_Vector_17714_label" x="209.6515555555523" y="262.4738366850327" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17714_label_tspan_0" baseline-shift="-35%" x="209.6515555555523" dy="0em">300</tspan></text><text id="OpenLayers_Feature_Vector_17716_label" x="205.59537777777456" y="264.8616171662584" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17716_label_tspan_0" baseline-shift="-35%" x="205.59537777777456" dy="0em">412</tspan></text><text id="OpenLayers_Feature_Vector_17718_label" x="202.26241422221904" y="263.6824619332396" fill="#ffffff" font-family="Courier New, monospace" font-size="14px" font-weight="bold" pointer-events="none" text-anchor="middle"><tspan id="OpenLayers_Feature_Vector_17718_label_tspan_0" baseline-shift="-35%" x="202.26241422221904" dy="0em">281</tspan></text></g></g></svg></div></div><div id="OpenLayers_Control_Zoom_5" class="olControlZoom olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1004;"><a href="#zoomIn" class="olControlZoomIn olButton">+</a><a href="#zoomOut" class="olControlZoomOut olButton">−</a></div><div id="OpenLayers_Control_ArgParser_6" class="olControlArgParser olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1004;"></div><div id="OpenLayers_Control_Attribution_7" class="olControlAttribution olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1004;">Data © <a href="http://www.openstreetmap.org/copyright/fr" target="_blank">OpenStreetMap</a> contributors</div><div id="OpenLayers_Control_MousePosition_36" class="olControlMousePosition olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1005;"></div><div id="OpenLayers_Control_LayerSwitcher_37" class="olControlLayerSwitcher olControlNoSelect" unselectable="on" style="position: absolute; width: 0px; height: 0px; z-index: 1006;"><div id="OpenLayers_Control_LayerSwitcher_37_layersDiv" class="layersDiv" style="display: none;"><div class="baseLbl">Base Layer</div><div class="baseLayersDiv"><input id="OpenLayers_Control_LayerSwitcher_37_input_17672" name="OpenLayers_Control_LayerSwitcher_37_baseLayers" type="radio" value="Style 1" checked="" class="olButton"><label class="labelSpan olButton" style="vertical-align: bottom;">Style 1</label><br><input id="OpenLayers_Control_LayerSwitcher_37_input_17673" name="OpenLayers_Control_LayerSwitcher_37_baseLayers" type="radio" value="Style 2" class="olButton"><label class="labelSpan olButton" style="vertical-align: bottom;">Style 2</label><br><input id="OpenLayers_Control_LayerSwitcher_37_input_17674" name="OpenLayers_Control_LayerSwitcher_37_baseLayers" type="radio" value="Style 3" class="olButton"><label class="labelSpan olButton" style="vertical-align: bottom;">Style 3</label><br></div><div class="dataLbl" style="display: none;">Overlays</div><div class="dataLayersDiv"></div></div><div id="OpenLayers_Control_MaximizeDiv" class="maximizeDiv olButton" style="position: absolute;"><img id="OpenLayers_Control_MaximizeDiv_innerImage" class="olAlphaImg" src="/carto/OpenLayers-2.13.1/img/layer-switcher-maximize.png" style="position: relative;"></div><div id="OpenLayers_Control_MinimizeDiv" class="minimizeDiv olButton" style="position: absolute; display: none;"><img id="OpenLayers_Control_MinimizeDiv_innerImage" class="olAlphaImg" src="/carto/OpenLayers-2.13.1/img/layer-switcher-minimize.png" style="position: relative;"></div></div><div id="OpenLayers_Control_DragFeature_94" class="olControlDragFeature olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1008;"></div><div id="OpenLayers_Control_DrawFeature_97" class="olControlDrawFeature olControlNoSelect" unselectable="on" style="position: absolute; z-index: 1009;"></div></div></div>
+                </div>
+            </div>
+            <a id="contenu" tabindex="-1"></a>
+            </div>
+        <div id="itineraire_light">
+    <form name="itineraire" method="post" action="/itineraire/lightform">
+    <div class="depart">
+        <div id="carburant">
+            <h2>Rechercher les points de vente pour un itinéraire</h2>
+            <fieldset>
+             <legend>Choisissez 1 à 4 carburants</legend>
+                                
+                <ul class="boite_carbu">
+                                            <li class="stylised-checkbox">
+                            <input type="checkbox" id="itineraire_fuel_0" name="itineraire[fuel][]" aria-describedby="erreur_fuel" value="1">
+                            <label for="itineraire_fuel_0"><img src="/images/carburants/1.svg" class="icon-carburant" alt="B7">Gazole
+                            </label>
+                        </li>
+                                            <li class="stylised-checkbox">
+                            <input type="checkbox" id="itineraire_fuel_1" name="itineraire[fuel][]" aria-describedby="erreur_fuel" value="6">
+                            <label for="itineraire_fuel_1"><img src="/images/carburants/6.svg" class="icon-carburant" alt="E5">SP98
+                            </label>
+                        </li>
+                                            <li class="stylised-checkbox">
+                            <input type="checkbox" id="itineraire_fuel_2" name="itineraire[fuel][]" aria-describedby="erreur_fuel" value="5">
+                            <label for="itineraire_fuel_2"><img src="/images/carburants/5.svg" class="icon-carburant" alt="E10">SP95-E10
+                            </label>
+                        </li>
+                                            <li class="stylised-checkbox">
+                            <input type="checkbox" id="itineraire_fuel_3" name="itineraire[fuel][]" aria-describedby="erreur_fuel" value="2">
+                            <label for="itineraire_fuel_3"><img src="/images/carburants/2.svg" class="icon-carburant" alt="E5">SP95
+                            </label>
+                        </li>
+                                            <li class="stylised-checkbox">
+                            <input type="checkbox" id="itineraire_fuel_4" name="itineraire[fuel][]" aria-describedby="erreur_fuel" value="4">
+                            <label for="itineraire_fuel_4"><img src="/images/carburants/4.svg" class="icon-carburant" alt="LPG">GPLc
+                            </label>
+                        </li>
+                                            <li class="stylised-checkbox">
+                            <input type="checkbox" id="itineraire_fuel_5" name="itineraire[fuel][]" aria-describedby="erreur_fuel" value="3">
+                            <label for="itineraire_fuel_5"><img src="/images/carburants/3.svg" class="icon-carburant" alt="E85">E85
+                            </label>
+                        </li>
+                                    </ul>
+            </fieldset>
+        </div>
+        <div id="destination">
+            <p><span class="obligatoire">* champs obligatoires</span></p>
+            <div id="titleItineraireAccueil">
+                <label class="labelh3" for="itineraire_city1" id="city1">Départ*</label>
+                <label class="labelh3" for="itineraire_city2" id="city2">Arrivée*</label>
+            </div>
+            <p>
+                
+                <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" id="itineraire_city1" name="itineraire[city1]" required="required" placeholder="Par exemple 'Toulouse' ou '33200'" aria-describedby="error_city1" class="ui-autocomplete-input" autocomplete="off">
+                <span class="autompleteLoading">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </p>
+            <p>
+                
+                <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" id="itineraire_city2" name="itineraire[city2]" required="required" placeholder="Par exemple 'Toulouse' ou '33200'" aria-describedby="error_city2" class="ui-autocomplete-input" autocomplete="off">
+                <span class="autompleteLoading">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </p>
+            <input type="submit" class="submit_recherche" value="Lancer la recherche">
+        </div>
+    </div>
+    <input type="hidden" id="itineraire__token" name="itineraire[_token]" value="2e687a24ea07ef6d.LyfmQXPLhyfHqGztvcBfh6Wl769bfcGd0kJLW3kVYBE.bVSpDiH6tGT20B_VioU-8pPMjd40NvjMix0aFjR8D05oSKcKRYjGYqHfJQ">
+    </form>
+</div>
+
+
+    <div id="besoin-d-aide">
+	<h2>Rechercher de l'aide ou des informations</h2>
+	<p>Pour trouver des informations sur le prix des carburants ou sur le fonctionnement du site prix-carburants.gouv.fr,</p>
+  <p>
+    veuillez d'abord consulter notre
+    <a href="/rubrique/faq/">Foire aux questions</a>
+    avant, le cas échéant, de
+    <a href="/contact/?rubrique=faq">nous contacter</a>
+  </p>
+</div>
+
+    <!-- fin Zone de contenu -->
+
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div id="bas_page_liens">
+            <ul class="li-basdepage">
+	<li>
+	<a href="https://www.service-public.fr/" target="_blank" title="Service Public - nouvelle fenêtre">
+		service-public.fr	</a>
+	</li>
+	<li aria-hidden="true">|</li>
+	<li>
+	<a href="https://www.legifrance.gouv.fr/" target="_blank" title="LEGIFRANCE, le service public de la diffusion du droit - nouvelle fenêtre">
+		legifrance.gouv.fr
+			</a>
+	</li>
+	<li aria-hidden="true">|</li>
+	<li>
+	<a href="http://www.gouvernement.fr" target="_blank" title="Site du gouvernement français - nouvelle fenêtre">
+		gouvernement.fr
+			</a>
+	</li>
+	<li aria-hidden="true">|</li>
+	<li>
+	<a href="https://www.data.gouv.fr/" target="_blank" title="Données publiques - nouvelle fenêtre">
+		data.gouv.fr
+			</a>
+	</li>
+	<li aria-hidden="true">|</li>
+	<li>
+	<a href="https://www.france.fr/fr" target="_blank" title="Site France.fr - nouvelle fenêtre">
+		france.fr
+			</a>
+	</li>
+	<li aria-hidden="true">|</li>
+	<li>
+		<a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/" target="_blank" title="RGAA Accessibilité - nouvelle fenêtre">
+			rgaa
+		</a>
+	</li>
+</ul>
+<div class="line-separation">
+	<div class="footer-left-spacing"></div>
+	<div class="footer-center-place"></div>
+	<div class="footer-right-spacing"></div>
+</div>
+        </div>
+    </footer>
+
+    <div id="popup">
+    <div class="popup_header"></div>
+    <div id="popup_content" class="popup_content"></div>
+    <div class="popup_footer"><a href="javascript:closePopup()" class="button">Fermer</a></div>
+</div></div>
+
+<div id="bottom">
+    
+<ul class="li-basdepage">
+	<li>Ministère de l'Économie, des Finances et de la Souveraineté industrielle 2022 -</li>
+	<li><a href="/rubrique/copyright/">Mentions légales</a></li>
+	<li aria-hidden="true"> | </li>
+	<li><a href="/rubrique/personal_data/">Données personnelles</a></li>
+	<li aria-hidden="true"> | </li>
+			<li><a href="/rubrique/opendata/">Données publiques</a></li>
+	<li aria-hidden="true"> | </li>
+	<li><a href="/rubrique/faq/">Foire aux questions</a></li>
+	<li aria-hidden="true"> | </li>
+	<li><a href="/document/statistiques_site_carburants.pdf" target="_blank">Statistiques (pdf)</a>
+	</li><li aria-hidden="true"> | </li>
+	<li><a href="/contact/">Contact</a></li>
+	<li aria-hidden="true"> | </li>
+	<li><a href="/rubrique/accessibilite/">Accessibilité : partiellement conforme</a></li>
+	</ul>
+        
+        <script src="/js/rgaa.js"></script>
+    
+    <script src="/carto/OpenLayers-2.13.1/OpenLayers.js" type="text/javascript"></script>
+    <script src="/carto/js/minimap.js" type="text/javascript"></script>
+    <script src="/carto/js/map.js" type="text/javascript"></script>
+    <script>
+        jQuery.noConflict();
+    </script>
+    <script type="text/javascript" src="/js/services_rech.js"></script>
+    <script src="/js/index-carto.js" type="text/javascript"></script>
+    <script src="/js/geolocalisation.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/search.js"></script>
+    <script>
+        addModifyFormEvents();
+    </script>
+    <script>
+    jQuery("#choix_services").find("li").each(function(){
+        jQuery(this).children("input").prop( "checked", false )
+    })
+    </script>
+    <script type="text/javascript">
+        addMenuResponsiveEvents();
+    </script>
+    
+                <script type="text/javascript">
+            var pageNameXiti = '';
+            if (typeof nomXITI !== 'undefined') {
+                pageNameXiti = nomXITI;
+            }
+            tag.page.set({name: pageNameXiti}); // en forcant à vide, l'arborescence (url) doit remonter.
+            tag.dispatch();
+        </script>
+            <script src="https://tracker.quadran.eu/qa-combined.js" type="text/javascript"></script>
+        <script type="text/javascript">QWATracker.activate("a21c56ed84a6abc58ec9b5a74e0ef3fb");</script>
+            </div>
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-2" tabindex="0" style="display: none;"></ul><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-3" tabindex="0" style="display: none;"></ul></body></html>
