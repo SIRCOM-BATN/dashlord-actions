@@ -157,6 +157,7 @@ const tools = {
   ecoindex: {
     data: requireToolData("ecoindex.json"),
   },
+  uptrends: { data: requireToolData("uptrends.json") },
 };
 
 //@ts-expect-error

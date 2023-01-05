@@ -34,7 +34,8 @@ type DashlordTool =
   | "github_repository"
   | "declaration-a11y"
   | "declaration-rgpd"
-  | "ecoindex";
+  | "ecoindex"
+  | "uptrends";
 
 type DashlordConfig = {
   title: string;
@@ -403,3 +404,18 @@ type EcoIndexReportRow = {
 };
 
 type EcoIndexReport = EcoIndexReportRow[];
+
+type UpTrendsReport = {
+  url: string;
+  monitorGuid: string;
+  currentYear: {
+    uptime: number;
+    uptimeGrade: string;
+    averageTime: number;
+  };
+  last30Days: {
+    uptime: number;
+    uptimeGrade: string;
+    averageTime: number;
+  };
+};
