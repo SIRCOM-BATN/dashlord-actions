@@ -5,6 +5,7 @@ import uniq from "lodash.uniq";
 import {
   Header,
   HeaderBody,
+  HeaderOperator,
   Logo as Marianne,
   Service,
   Tool,
@@ -14,9 +15,8 @@ import {
   NavItem,
   NavSubItem,
 } from "@dataesr/react-dsfr";
-import { smallUrl, slugifyUrl, sortByKey } from "../utils";
-
-const dashlordConfig: DashlordConfig = require("../config.json");
+import { smallUrl, slugifyUrl, sortByKey, isToolEnabled } from "../utils";
+import dashlordConfig from '@/config.json';
 
 type HeaderSiteProps = {
   report: DashLordReport;
@@ -30,7 +30,8 @@ const NavLink = ({
   children?: ReactChildren;
 }) => {
   const router = useRouter();
-  const isCurrent = href === router.asPath;
+  const trailingSlash = href.endsWith("/") ? "" : "/";
+  const isCurrent = (href + trailingSlash) === router.asPath;
   return (
     <Link href={href} prefetch={false}>
       <a
@@ -73,6 +74,15 @@ export const HeaderSite: React.FC<HeaderSiteProps> = ({ report }) => {
           <Logo asLink={<TitleLink href="/" />} splitCharacter={10}>
             {dashlordConfig.entity}
           </Logo>
+          {dashlordConfig.operator && (
+            <HeaderOperator>
+              { typeof dashlordConfig.operator.logo === "string" ? (
+                <img className="fr-responsive-img" style={{width: "3.5rem"}} src={dashlordConfig.operator.logo} alt={dashlordConfig.operator.name} />
+              ) : (
+                <img className="fr-responsive-img" style={dashlordConfig.operator.logo.direction === "vertical" ? { maxWidth: "9.0625rem" } : {width: "3.5rem"}} src={dashlordConfig.operator.logo.src} alt={dashlordConfig.operator.name} />
+              )}
+            </HeaderOperator>
+          )}
           <Service
             asLink={<TitleLink href="/" />}
             title={dashlordConfig.title}
@@ -130,11 +140,19 @@ export const HeaderSite: React.FC<HeaderSiteProps> = ({ report }) => {
               />
             ))}
           </NavItem>
-          <NavItem
-            title="Technologies"
-            asLink={<NavLink href="/wappalyzer" />}
-          />
-          <NavItem title="Evolutions" asLink={<NavLink href="/trends" />} />
+          {isToolEnabled("wappalyzer") && (
+            <NavItem
+              title="Technologies"
+              asLink={<NavLink href="/wappalyzer" />}
+            />
+          )}
+          {isToolEnabled("trivy") && (
+            <NavItem title="Trivy" asLink={<NavLink href="/trivy" />} />
+          )}
+          <NavItem title="Évolutions" asLink={<NavLink href="/trends" />} />
+          {isToolEnabled("updownio") && (
+            <NavItem title="Disponibilité" asLink={<NavLink href="/updownio" />} />
+          )}
           <NavItem title="A propos" asLink={<NavLink href="/about" />} />
         </HeaderNav>
       </Header>

@@ -35,9 +35,10 @@ type DashlordTool =
   | "declaration-a11y"
   | "declaration-rgpd"
   | "ecoindex"
+  | "sonarcloud";
   | "uptrends";
 
-type DashlordConfig = {
+type DashLordConfig = {
   title: string;
   entity: string;
   description: string;
@@ -48,6 +49,14 @@ type DashlordConfig = {
   loginUrl?: string;
   matomoId?: number;
   matomoUrl?: string;
+  operator?: Operator;
+  updownioStatusPage?: string;
+};
+
+type Operator = {
+  /** Default direction is horizontal */
+  logo: string | { src: string; direction: "horizontal" | "vertical" };
+  name: string;
 };
 
 type SslTestReportEntry = {
@@ -334,9 +343,11 @@ type BetagouvReportPhase = {
 };
 
 type BetagouvReport = {
+  id: string;
   attributes: {
     repository: string;
     phases: BetagouvReportPhase[];
+    pitch: string;
   };
 };
 
@@ -394,16 +405,64 @@ interface Vulnerability {
   PrimaryURL: string;
   Title?: string;
   Severity: string;
+  FixedVersion?: string;
+  CVSS: {
+    nvd: {
+      V2Score: number;
+      V3Score: number;
+    };
+    redhat: {
+      V3Score: number;
+    };
+  };
 }
 
 type EcoIndexReportRow = {
-  label: "EcoIndex" | "Note" | "GES" | "Eau";
-  value: string | number;
-  unit?: string;
-  comment?: string;
+  width: number;
+  height: number;
+  url: string;
+  size: number;
+  nodes: number;
+  requests: number;
+  grade: string;
+  score: number;
+  ges: number;
+  water: number;
+  ecoindex_version: string;
+  date: string;
+  page_type: any;
 };
 
 type EcoIndexReport = EcoIndexReportRow[];
+
+interface SonarCloudRepoReport {
+  repo: string;
+  result: SonarCloudRepoRepoResult;
+}
+
+interface SonarCloudRepoRepoResult {
+  name: string;
+  isMain: boolean;
+  type: string;
+  status: SonarCloudRepoStatus;
+  analysisDate: string;
+  commit: SonarCloudRepoRepoCommit;
+}
+
+interface SonarCloudRepoStatus {
+  bugs: number;
+  vulnerabilities: number;
+  codeSmells: number;
+  qualityGateStatus?: string;
+}
+
+interface SonarCloudRepoRepoCommit {
+  sha: string;
+  date: string;
+  message: string;
+}
+
+type SonarCloudReport = SonarCloudRepoReport[];
 
 type UpTrendsReport = {
   url: string;

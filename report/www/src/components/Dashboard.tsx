@@ -429,7 +429,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ report }) => {
     columns.push(
       getColumn({
         id: "codescan",
-        title: "CodeQL",
+        title: "CodeScan",
         info: "Potentielles vulnérabilités ou erreurs detectées dans les codes sources (codescan)",
         category: "securite",
         hash: "codescan",
@@ -600,6 +600,19 @@ export const Dashboard: React.FC<DashboardProps> = ({ report }) => {
         info: "Vulnérabilités Trivy",
         hash: "trivy",
         gradeKey: "trivyGrade",
+      })
+    );
+  }
+
+  if (isToolEnabled("sonarcloud")) {
+    columns.push(
+      getColumn({
+        id: "sonarcloud",
+        category: "securite",
+        title: "SonarCloud",
+        info: "Scan de code SonarCloud.io",
+        hash: "sonarcloud",
+        gradeKey: "sonarcloudGrade",
       })
     );
   }

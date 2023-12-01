@@ -12,14 +12,15 @@ const tests = [
       grade: "A",
       totalCount: 0,
       repositories: [
-      {
-        grade: "A",
-        vulnerabilityAlerts: {
-          totalCount: 0,
-          nodes: [],
+        {
+          grade: "A",
+          vulnerabilityAlerts: {
+            totalCount: 0,
+            nodes: [],
+          },
         },
-      },
-    ]},
+      ],
+    },
     expected: { dependabotGrade: "A", dependabotCount: 0 },
   },
   {
@@ -28,14 +29,15 @@ const tests = [
       grade: "A",
       totalCount: 1,
       repositories: [
-      {
-        grade: "A",
-        vulnerabilityAlerts: {
-          totalCount: 1,
-          nodes: [],
+        {
+          grade: "A",
+          vulnerabilityAlerts: {
+            totalCount: 1,
+            nodes: [],
+          },
         },
-      },
-    ]},
+      ],
+    },
     expected: { dependabotGrade: "A", dependabotCount: 1 },
   },
   {
@@ -44,20 +46,27 @@ const tests = [
       grade: "B",
       totalCount: 1,
       repositories: [
-      {
-        grade: "B",
-        vulnerabilityAlerts: {
-          totalCount: 1,
-          nodes: [
-            {
-              securityVulnerability: {
-                severity: "MEDIUM",
+        {
+          grade: "B",
+          vulnerabilityAlerts: {
+            totalCount: 1,
+            nodes: [
+              {
+                securityVulnerability: {
+                  severity: "MEDIUM",
+                },
               },
-            },
-          ],
+              {
+                dismissedAt: 42,
+                securityVulnerability: {
+                  severity: "MEDIUM",
+                },
+              },
+            ],
+          },
         },
-      },
-    ]},
+      ],
+    },
     expected: { dependabotGrade: "B", dependabotCount: 1 },
   },
   {
@@ -66,20 +75,21 @@ const tests = [
       grade: "F",
       totalCount: 1,
       repositories: [
-      {
-        grade: "F",
-        vulnerabilityAlerts: {
-          totalCount: 1,
-          nodes: [
-            {
-              securityVulnerability: {
-                severity: "CRITICAL",
+        {
+          grade: "F",
+          vulnerabilityAlerts: {
+            totalCount: 1,
+            nodes: [
+              {
+                securityVulnerability: {
+                  severity: "CRITICAL",
+                },
               },
-            },
-          ],
+            ],
+          },
         },
-      },
-    ]},
+      ],
+    },
     expected: { dependabotGrade: "F", dependabotCount: 1 },
   },
 ];

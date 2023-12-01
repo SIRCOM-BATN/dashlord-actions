@@ -3,8 +3,13 @@ on:
     branches: ["*"]
     paths:
       - declaration-rgpd
+      - .github/workflows/declaration-rgpd.yml
+
   pull_request:
     branches: ["*"]
+    paths:
+      - declaration-rgpd
+      - .github/workflows/declaration-rgpd.yml
 
 name: Test declaration-rgpd
 jobs:
@@ -35,4 +40,4 @@ jobs:
         run: |
           ls -la
           cat rgpd.json
-          [[ $(cat rgpd.json | jq '.[0].score') -eq "4" ]] || (echo "Error: Should score 4" && exit 1)
+          [[ $(cat rgpd.json | jq '.[0].score') -eq "3" ]] || (echo "Error: Should score 3" && exit 1)

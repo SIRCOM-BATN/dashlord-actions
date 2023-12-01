@@ -13,10 +13,9 @@ import { HeaderSite } from "../src/components/HeaderSite";
 import { FooterSite } from "../src/components/FooterSite";
 
 import "../src/custom.css";
-
-const dashlordConfig: DashlordConfig = require("../src/config.json");
-
-const report: DashLordReport = require("../src/report.json");
+import "../src/overrideDSFR.css"
+import dashlordConfig from '@/config.json';
+import report from '@/report.json';
 
 const MATOMO_URL = dashlordConfig.matomoUrl;
 const MATOMO_SITE_ID = dashlordConfig.matomoId;
@@ -31,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     init({ url: MATOMO_URL, siteId: "" + MATOMO_SITE_ID });
   }, []);
   return (
-    <div>
+    <div className={(dashlordConfig.marianne ? "" : "nonGovernementalWebsite")}>
       <Head>
         <meta charSet="utf-8" lang="FR-fr" />
         <meta
@@ -40,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="description" content="Dashboard des applications" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
-        <title>DashLord</title>
+        <title>{dashlordConfig.title}</title>
       </Head>
       <HeaderSite report={report} />
       <Container fluid={fluid}>
