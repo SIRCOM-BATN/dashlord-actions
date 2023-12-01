@@ -24,10 +24,10 @@ const searches = [
       "Données personnelles",
     ],
     mustMatch: [
-      ["@"],
+      //["@"],
       ["finalité"],
       ["durée de conservation"],
-      ["sous-traitants", "sous traitants"],
+      //["sous-traitants", "sous traitants"],
     ],
   },
 ];

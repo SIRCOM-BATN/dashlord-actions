@@ -18,7 +18,8 @@
     "dependabot": true,
     "codescan": true,
     "declaration-a11y": true,
-    "declaration-rgpd": true
+    "declaration-rgpd": true,
+    "uptrends": true
   },
   "urls": [
     {

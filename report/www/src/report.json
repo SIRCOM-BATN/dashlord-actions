@@ -5198,7 +5198,8 @@
     "trivy": null,
     "declaration-a11y": {
       "mention": "Accessibilité : partiellement conforme",
-      "declarationUrl": "https://index-egapro.travail.gouv.fr/a11y/declaration-accessibilite-rgaa-4-1.pdf"
+      "declarationUrl": "https://index-egapro.travail.gouv.fr/a11y/declaration-accessibilite-rgaa-4-1.pdf",
+      "percentage": "80%"
     },
     "declaration-rgpd": [
       {

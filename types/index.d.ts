@@ -36,6 +36,7 @@ type DashlordTool =
   | "declaration-rgpd"
   | "ecoindex"
   | "sonarcloud";
+  | "uptrends";
 
 type DashLordConfig = {
   title: string;
@@ -361,6 +362,7 @@ type PageReport = {
 type DeclarationA11yReport = {
   mention: string | null;
   declarationUrl?: string;
+  percentage?: string;
 };
 
 type DeclarationRgpdItem = {
@@ -461,3 +463,18 @@ interface SonarCloudRepoRepoCommit {
 }
 
 type SonarCloudReport = SonarCloudRepoReport[];
+
+type UpTrendsReport = {
+  url: string;
+  monitorGuid: string;
+  currentYear: {
+    uptime: number;
+    uptimeGrade: string;
+    averageTime: number;
+  };
+  last30Days: {
+    uptime: number;
+    uptimeGrade: string;
+    averageTime: number;
+  };
+};

@@ -395,6 +395,22 @@ export const Dashboard: React.FC<DashboardProps> = ({ report }) => {
     ]);
   }
 
+  if (isToolEnabled("uptrends")) {
+    columns.push(
+      getColumn({
+        id: "uptrends",
+        title: "Disponibilité",
+        info: "Disponibilité du service (uptrends)",
+        hash: "uptrends",
+        gradeKey: "uptrendsUptimeGrade",
+        category: "disponibilite",
+        gradeLabel: (rowData) =>
+          rowData.summary.uptrendsUptime !== undefined && rowData.summary.uptrendsUptime !== null && 
+          percent((rowData.summary.uptrendsUptime || 0)),
+      })
+    );
+  }
+
   if (isToolEnabled("dependabot")) {
     columns.push(
       getColumn({

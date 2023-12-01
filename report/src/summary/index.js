@@ -33,6 +33,8 @@ const tools = {
   ecoindex: (report) => require("./ecoindex")(report),
   /** @param {SonarCloudReport} report */
   sonarcloud: (report) => require("./sonarcloud")(report),
+  /** @param {UpTrendsReport} report */
+  uptrends: (report) => require("./uptrends")(report),
 };
 
 /**

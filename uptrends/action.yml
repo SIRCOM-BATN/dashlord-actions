@@ -1,0 +1,29 @@
+name: "Uptrends scan action"
+description: "Récupère des informations de disponibilité d'Uptrends"
+author: 'Cédric NOËL'
+inputs:
+  api_secrets: 
+    description: 'Uptrends API secrets required format login:token'
+    required: true
+  url:
+    description: "URL à tester"
+    required: true
+  output:
+    description: "Path to output file. defaults to uptrends.json"
+    default: "uptrends.json"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install
+      shell: bash
+      run: |
+        cd ${{ github.action_path }}
+        yarn
+    - name: Retrieves data for url
+      shell: bash
+      run: |
+        cd ${{ github.action_path }}
+        node index ${{ inputs.url }} ${{ inputs.api_secrets }} > ${{ github.workspace }}/${{ inputs.output }}
+        cat ${{ github.workspace }}/${{ inputs.output }}

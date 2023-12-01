@@ -25,6 +25,7 @@ import { Betagouv } from "./BetagouvInfo";
 import { GithubRepository } from "./GithubRepository";
 import { EcoIndex } from "./EcoIndex";
 import { SonarCloud } from "./SonarCloud";
+import { UpTrends } from "./Uptrends";
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -114,6 +115,10 @@ const tabs = [
       {
         id: "updownio",
         render: (report, url) => <UpdownIo data={report.updownio} url={url} />,
+      },
+      {
+        id: "uptrends",
+        render: (report, url) => <UpTrends data={report.uptrends} url={url} />,
       },
     ],
   },

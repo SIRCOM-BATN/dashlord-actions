@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`carbu.html 1`] = `
+{
+  "declarationUrl": "https://example.com/rubrique/accessibilite/",
+  "mention": "Accessibilité : partiellement conforme",
+}
+`;
+
 exports[`code.html 1`] = `
+{
+  "declarationUrl": "https://example.com/accessibilite",
+  "mention": "Accessibilité : partiellement conforme",
+}
+`;
+
+exports[`eco.html 1`] = `
 {
   "declarationUrl": "https://example.com/accessibilite",
   "mention": "Accessibilité : partiellement conforme",
@@ -32,5 +46,12 @@ exports[`opentermsarchive.org.html 1`] = `
 {
   "declarationUrl": "https://example.com/fr/accessibility",
   "mention": "Accessibilité : non conforme",
+}
+`;
+
+exports[`tourisme.html 1`] = `
+{
+  "declarationUrl": "https://example.com/fr/declaration-d-accessibilite",
+  "mention": "Accessibilité : partiellement conforme",
 }
 `;

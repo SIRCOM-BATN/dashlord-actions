@@ -166,6 +166,7 @@ const tools = {
   sonarcloud: {
     data: requireToolData("sonarcloud.json"),
   },
+  uptrends: { data: requireToolData("uptrends.json") },
 };
 
 //@ts-expect-error

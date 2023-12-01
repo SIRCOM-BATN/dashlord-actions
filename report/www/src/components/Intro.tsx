@@ -290,6 +290,27 @@ export const Intro: React.FC = () => (
       </Panel>
     )}
 
+    {isToolEnabled("uptrends") && (
+      <Panel
+        title="Uptrends"
+        urlText="Site officiel"
+        url="https://app.uptrends.com/"
+        isExternal
+      >
+        Évalue la qualité de service rendue par le serveur
+        <br />
+        <br />
+        <li>Temps de réponse</li>
+        <li>Disponibilité</li>
+        <br />
+        <Alert
+          title=""
+          type="info"
+          description="Vous devez disposer d'un compte uptrends et d'une clé API"
+        />
+      </Panel>
+    )}
+
     {isToolEnabled("nuclei") && (
       <Panel
         title="Nucléi"
