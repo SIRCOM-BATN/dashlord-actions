@@ -35,7 +35,7 @@ type DashlordTool =
   | "declaration-a11y"
   | "declaration-rgpd"
   | "ecoindex"
-  | "sonarcloud";
+  | "sonarcloud"
   | "uptrends";
 
 type DashLordConfig = {
